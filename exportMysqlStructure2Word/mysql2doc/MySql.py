@@ -20,9 +20,7 @@ class Schema:
 
     def showTables(self, schema):
         value = self.engine.execute('select table_name,table_comment from information_schema.TABLES where table_schema = \'' + schema + '\'')
-        print(value.description)
-       
-        return [ele[0] for ele in value]
+        return value
 
     def tableDetail(self, schema, tableName, tableComment):
         fields = []

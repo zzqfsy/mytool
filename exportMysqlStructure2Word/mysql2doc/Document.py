@@ -1,6 +1,5 @@
 from docx import Document
 
-
 class Word:
     def __init__(self, document):
         super().__init__()
@@ -10,8 +9,8 @@ class Word:
         ele.paragraphs[0].add_run(text).bold = True
 
     def addTable(self, table, seqNO):
-        self.document.add_heading("{} {}".format(seqNO, table.name), level=1)
-        self.document.add_paragraph(table.comment)
+        self.document.add_heading("{} {}".format(seqNO, table.name + '(' + table.comment + ')'), level=1)
+        
         tableGrid = self.document.add_table(rows=1, cols=4, style='TableGrid')
         titleRow = tableGrid.rows[0].cells
         Word.__bold(titleRow[0], '字段')
