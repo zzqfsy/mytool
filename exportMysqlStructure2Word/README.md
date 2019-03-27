@@ -4,6 +4,7 @@
 # export mysql database to microsoft word file
 #config database information in config.properties file then run Main.py
 
+fork https://github.com/yanglikun/mysql2word-python
 
 ![word样例](http://yanglikun.github.io/share/dbtable.jpg)
 

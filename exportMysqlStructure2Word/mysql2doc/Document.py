@@ -15,17 +15,18 @@ class Word:
         titleRow = tableGrid.rows[0].cells
         Word.__bold(titleRow[0], '字段')
         titleRow[1].text = '类型'
-        titleRow[2].text = '备注'
-        titleRow[3].text = '允许为空'
+        titleRow[2].text = '允许为空'
+        titleRow[3].text = '备注'
         for field in table.fields:
             row = tableGrid.add_row().cells
             row[0].text = field.name
             row[1].text = field.type
-            row[2].text = field.comment
             if field.nullable:
-                row[3].text = '是'
+                row[2].text = '是'
             else:
-                row[3].text = '否'
+                row[2].text = '否'
+            row[3].text = field.comment
+      
         self.document.add_paragraph()
         self.document.add_paragraph('索引列', style='ListBullet')
         idxTableGrid = self.document.add_table(rows=1, cols=5, style='TableGrid')
